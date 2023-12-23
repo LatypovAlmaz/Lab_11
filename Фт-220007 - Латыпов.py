@@ -16,15 +16,16 @@ print(m2)
 while True:
     try:
         logging.info("Выбор режима работы")
-        choice = int(input('Введите число 1 или 2: '))
+        choice1 = input('Введите число 1 или 2: ')
+        choice = int(choice1)
         if choice < 1 or choice > 2:
             print('Ошибка!!! Вы ввели неприавильное число')
-            logging.error("Ошибка выбора режима работы")
+            logging.error(f"Ошибка выбора режима работы, пользователь ввел - {choice}")
             continue
         break
     except ValueError:
         print('Введите число')
-        logging.error("Ошибка выбора режима работы")
+        logging.error(f"Ошибка выбора режима работы, пользователь ввел - {choice1}")
 count = 1
 while count == 1:
     if choice == 1:
@@ -45,11 +46,10 @@ while count == 1:
                 break
             except NameError:
                 print('Такой страны нет в списке')
-                logging.error("Ошибка ввода страны")
+                logging.error(f"Ошибка ввода страны, пользователь ввел - {country1}")
             except KeyError:
                 print('Такой страны нет в списке')
-                logging.error("Ошибка ввода страны")
-        logging.info("")
+                logging.error(f"Ошибка ввода страны, пользователь ввел - {country1}")
     if choice == 2:
         logging.info(f"Выбранный режим - {m2}")
         while True:
@@ -71,8 +71,8 @@ while count == 1:
                 break
             except NameError:
                 print('Такой столицы нет в списке')
-                logging.error("Ошибка ввода столицы")
+                logging.error(f"Ошибка ввода столицы, пользователь ввел - {capital2}")
             except KeyError:
                 print('Такой столицы нет в списке')
-                logging.error("Ошибка ввода столицы")
-        logging.info("")
+                logging.error(f"Ошибка ввода столицы, пользователь ввел - {capital2}")
+logging.info("")
